@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./node_modules/@jsplumb-components/flowchart/jsplumb.components.flowchart.css">
+        <link rel="stylesheet" href="./node_modules/@jsplumb-components/flowchart/jsplumb.components.flowchart.theme.default.css">
+        <link rel="stylesheet" href="../app.css">
+        <title>Flowchart Builder Demonstration</title>
+    </head>
+
+    <body>
+        <div style="display:flex">
+            <div id="palette"></div>
+            <div id="container"></div>
+            <div id="rhs">
+                <div id="undoredo">
+                    <button data-action="undo">Undo</button>
+                    <button data-action="redo">Redo</button>
+                </div>
+                <button id="btnClear">Clear</button>
+                <div id="inspector"></div>
+                <div id="picker"></div>
+            </div>
+        </div>
+
+        <script src="./_build/demo.umd.js"></script>
+
+    </body>
+</html>

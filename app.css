@@ -1,0 +1,19 @@
+body * {
+    font-family: sans-serif;
+}
+
+#palette {
+    flex-basis:15%;
+}
+
+#container {
+    flex-basis:65%;
+    height:800px;
+    outline:2px solid cadetblue;
+}
+
+#rhs {
+    display:flex;
+    flex-direction: column;
+    flex-basis:20%;
+}

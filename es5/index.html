@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./node_modules/@jsplumb-components/flowchart/jsplumb.components.flowchart.css">
+        <link rel="stylesheet" href="./node_modules/@jsplumb-components/flowchart/jsplumb.components.flowchart.theme.default.css">
+        <link rel="stylesheet" href="../app.css">
+        <script src="./node_modules/@jsplumb-components/flowchart/jsplumb.components.flowchart.umd.js"></script>
+        <title>Flowchart Builder Demonstration</title>
+    </head>
+
+    <body>
+        <div style="display:flex">
+            <div id="palette"></div>
+            <div id="container"></div>
+            <div id="rhs">
+                <div id="undoredo">
+                    <button data-action="undo">Undo</button>
+                    <button data-action="redo">Redo</button>
+                </div>
+                <button id="btnClear">Clear</button>
+                <div id="inspector"></div>
+                <div id="picker"></div>
+            </div>
+        </div>
+
+        <script>
+
+            var flowchart = jsPlumbFlowchartBuilder.newInstance({
+                    container:document.getElementById("container"),
+                    palette:{
+                        container:document.getElementById("palette")
+                    },
+                    inspector:{
+                        container:document.getElementById("inspector")
+                    },
+                    undoRedo:{
+                        undo:document.querySelector("[data-action='undo']"),
+                        redo:document.querySelector("[data-action='redo']")
+                    }
+                })
+
+            flowchart.loadUrl("../copyright.json", function() { flowchart.zoomToFit()})
+
+            document.getElementById("btnClear").addEventListener("click", function() {
+                if (confirm("Clear dataset?")) {
+                    flowchart.clear()
+                }
+            })
+
+
+        </script>
+    </body>
+</html>
